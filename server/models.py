@@ -1,6 +1,5 @@
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.orm import validates
-
 db = SQLAlchemy()
 
 
@@ -30,8 +29,7 @@ class Author(db.Model):
         if len(phone_number) != 10:
             raise ValueError("Phone number must be 10 digits.")
         return phone_number
-    
-    
+
 class Post(db.Model):
     __tablename__ = 'posts'
 
